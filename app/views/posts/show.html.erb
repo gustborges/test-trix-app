@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<% if @post.image.attached? %>
+  <%= image_tag @post.image %>
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= embed_video_links(@post.content) %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
